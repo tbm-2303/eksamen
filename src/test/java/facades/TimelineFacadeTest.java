@@ -68,7 +68,7 @@ public class TimelineFacadeTest {
         }
     }
 
-
+    @Disabled
     @Test
     //Virker
     public void createTimelineTest(){
@@ -89,7 +89,10 @@ public class TimelineFacadeTest {
         assertEquals(expected, actual);
     }
 
+
+
     //Virker
+    @Disabled
     @Test
     public void getAllTimelines(){
         EntityManager em = emf.createEntityManager();
@@ -119,7 +122,7 @@ public class TimelineFacadeTest {
     public void testTimelineCount() throws Exception{
         assertEquals(1, timelineFacade.getTimelineCount());
     }
-
+    @Disabled
     @Test
     public void editIntervalTest(){
         Integer id = timeline.getId();
