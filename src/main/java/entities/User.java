@@ -36,6 +36,12 @@ public class User implements Serializable {
 
     }
 
+    public User(String userName, String password, String email){
+        this.userName = userName;
+        this.password = BCrypt.hashpw(password, BCrypt.gensalt());
+        this.email = email;
+    }
+
     public User(Integer id, String userName, String password, String email,  List<Role> roleList){
         this.id = id;
         this.userName = userName;
@@ -125,6 +131,9 @@ public class User implements Serializable {
         this.roleList = roleList;
     }
 
+    public void addRole(Role userRole) {
+        roleList.add(userRole);
+    }
     @Override
     public String toString() {
         return "User{" +

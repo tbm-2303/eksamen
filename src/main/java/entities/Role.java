@@ -13,11 +13,14 @@ public class Role implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_id", updatable = false, nullable = false)
     private Integer id;
+
     @Column(name = "role_name", updatable = true, nullable = false)
     private String role;
 
     @ManyToMany (mappedBy = "roleList", cascade = {CascadeType.PERSIST})
     private List<User> userList;
+
+
 
     public Role(){
 
